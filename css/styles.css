@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+#navigation .container {
+  padding: 2rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#navigation a h1 {
+  font-size: 2.2rem;
+}
+#navigation .links a {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+#store .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+#store .container .thumb-unit {
+  text-align: center;
+}
+#store .container .thumb-unit img {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+#store .container .thumb-unit p {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 800px) {
+  #store .title {
+    font-size: 2rem;
+  }
+  #store .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #store .container .thumb-unit p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  #store .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}/*# sourceMappingURL=styles.css.map */
