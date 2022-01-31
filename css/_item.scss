@@ -1,0 +1,68 @@
+.content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+
+  img {
+    width: 100%;
+  }
+  .image-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 10px;
+
+    .thumb-unit {
+      cursor: pointer;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  .text-wrapper {
+    .name {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+    .price {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .slug {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    label {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    select {
+      display: block;
+      width: 200px;
+      font-size: 1.2rem;
+      padding: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .button-wrapper button {
+      display: block;
+      padding: 1rem 5rem;
+      background-color: black;
+      color: white;
+      font-size: 1rem;
+    }
+  }
+}
+
+// media query
+@media (max-width: 960px) {
+  .content-wrapper {
+    display: block;
+
+    .image-wrapper {
+      margin-bottom: 1.8rem;
+    }
+  }
+}

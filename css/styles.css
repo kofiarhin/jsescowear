@@ -16,9 +16,9 @@ button {
 }
 
 .container {
-  width: 90%;
+  width: 1200px;
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 80%;
 }
 
 .title {
@@ -73,5 +73,63 @@ button {
 @media (max-width: 500px) {
   #store .container {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+.content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.content-wrapper img {
+  width: 100%;
+}
+.content-wrapper .image-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 10px;
+}
+.content-wrapper .image-wrapper .thumb-unit {
+  cursor: pointer;
+  margin-bottom: 0.2rem;
+}
+.content-wrapper .text-wrapper .name {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+.content-wrapper .text-wrapper .price {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+.content-wrapper .text-wrapper .slug {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+.content-wrapper .text-wrapper label {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.content-wrapper .text-wrapper select {
+  display: block;
+  width: 200px;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+.content-wrapper .text-wrapper .button-wrapper button {
+  display: block;
+  padding: 1rem 5rem;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+}
+
+@media (max-width: 960px) {
+  .content-wrapper {
+    display: block;
+  }
+  .content-wrapper .image-wrapper {
+    margin-bottom: 1.8rem;
   }
 }/*# sourceMappingURL=styles.css.map */
