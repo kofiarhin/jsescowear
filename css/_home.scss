@@ -1,0 +1,26 @@
+#banner {
+  min-height: 80vh;
+  background-image: url("../images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(black, 0.4);
+    display: grid;
+    place-items: center;
+  }
+  .cta {
+    a {
+      background-color: black;
+      color: white;
+      font-size: 1.2rem;
+      padding: 1rem 3rem;
+      cursor: pointer;
+    }
+  }
+}

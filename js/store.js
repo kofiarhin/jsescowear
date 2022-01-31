@@ -26,8 +26,11 @@ async function init() {
   // check for category
 
   const search = new URLSearchParams(window.location.search);
+
   const category = search.get("category");
-  const data = await getStoreData(category);
+
+  let data = category ? await getStoreData(category) : await getStoreData();
+
   if (data && data.length > 0) {
     renderItems(data);
   }
