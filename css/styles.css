@@ -209,6 +209,9 @@ button {
 }
 
 @media (max-width: 800px) {
+  #banner {
+    background-image: Url("../images/banner-small.jpg");
+  }
   #banner .overlay a {
     font-size: 1rem;
   }
