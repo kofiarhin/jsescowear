@@ -31,6 +31,9 @@
 
 @media (max-width: 900px) {
   #navigation {
+    a h1 {
+      font-size: 1.8rem;
+    }
     .links.active {
       transform: translateX(0%);
     }

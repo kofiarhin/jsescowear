@@ -19,6 +19,12 @@ const handleThumb = () => {
 };
 // render item
 function renderItem(item, category) {
+  // render text details
+  const name = document.querySelector(".name");
+  const price = document.querySelector(".price span");
+
+  price.textContent = item.price.toFixed(2);
+  name.textContent = item.name;
   // render main thumb
   const thumb = document.querySelector(".main-thumb img");
   const thumbUrl = `/images/${category}/${item.name}/1.jpg`;
@@ -62,8 +68,9 @@ function renderItem(item, category) {
   selectWrapper.innerHTML = selectMarkup;
 }
 
-async function init() {
-  // get url params
+async function renderDetails() {
+  console.log("Render details");
+
   const search = new URLSearchParams(window.location.search);
   const category = search.get("category");
   const name = search.get("name");
@@ -78,6 +85,10 @@ async function init() {
   } else {
     console.log("error");
   }
+}
+async function init() {
+  renderDetails();
+  // get url params
 }
 
 init();

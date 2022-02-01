@@ -54,6 +54,9 @@ button {
 }
 
 @media (max-width: 900px) {
+  #navigation a h1 {
+    font-size: 1.8rem;
+  }
   #navigation .links.active {
     transform: translateX(0%);
   }
@@ -94,6 +97,7 @@ button {
 }
 #store .container .thumb-unit {
   text-align: center;
+  min-height: 150px;
 }
 #store .container .thumb-unit img {
   width: 100%;
@@ -112,7 +116,7 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
   #store .container .thumb-unit p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 500px) {
@@ -192,8 +196,9 @@ button {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #banner .cta a {
   background-color: black;
@@ -201,4 +206,10 @@ button {
   font-size: 1.2rem;
   padding: 1rem 3rem;
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  #banner .overlay a {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
