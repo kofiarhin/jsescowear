@@ -1,3 +1,23 @@
+// get store data
+async function getStoreData(category = "hoodies") {
+  const res = await fetch("../../data/data.json");
+  const data = await res.json();
+
+  const dataToFormat = data[category];
+
+  return dataToFormat.map((item) => {
+    return { ...item, category };
+  });
+}
+
+// get store item
+async function getItem(category, name) {
+  const data = await getStoreData(category);
+
+  // find item
+  return data.find((item) => item.name === name);
+}
+
 // render title
 const renderTitle = (item) => {
   const title = document.querySelector("title");
@@ -68,27 +88,69 @@ function renderItem(item, category) {
   selectWrapper.innerHTML = selectMarkup;
 }
 
-async function renderDetails() {
+async function renderDetails(item, category) {
   console.log("Render details");
+  renderTitle(item);
+  renderItem(item, category);
+}
 
-  const search = new URLSearchParams(window.location.search);
-  const category = search.get("category");
-  const name = search.get("name");
+// add item
 
-  if (name && category) {
-    const item = await getItem(category, name);
-    renderTitle(item);
+function addItem(item) {
+  let cartData = [];
 
-    if (item) {
-      renderItem(item, category);
-    }
+  const check = sessionStorage.getItem("cartData");
+
+  if (!check) {
+    cartData.push(item);
+
+    const dataToSubmit = JSON.stringify(cartData);
+
+    sessionStorage.setItem("cartData", dataToSubmit);
   } else {
-    console.log("error");
+    cartData = sessionStorage.getItem("cartData");
+
+    const data = JSON.parse(cartData);
+
+    data.push(item);
+
+    const dataToSubmit = JSON.stringify(data);
+
+    sessionStorage.setItem("cartData", dataToSubmit);
+
+    const checks = JSON.parse(sessionStorage.getItem("cartData"));
+
+    console.log(checks.length);
   }
 }
+// handle add item
+function handleAddItem(item) {
+  const btn = document.querySelector(".button-wrapper button");
+
+  btn.addEventListener("click", function () {
+    // get item size
+    const size = document.querySelector("select").value;
+
+    item.size = size;
+
+    // add item to cart
+
+    addItem(item);
+  });
+}
+
+// initialize app
 async function init() {
-  renderDetails();
-  // get url params
+  const search = new URLSearchParams(window.location.search);
+  const name = search.get("name");
+  const category = search.get("category");
+
+  const item = await getItem(category, name);
+
+  renderDetails(item, category);
+
+  // handle add item
+  handleAddItem(item);
 }
 
 init();
