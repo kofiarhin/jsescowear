@@ -86,6 +86,10 @@ async function renderDetails(item) {
 // add item
 
 function addItem(item) {
+  // get checkout button
+  const domCheckout = document.querySelector(".button-wrapper a");
+
+  console.log(domCheckout);
   let cartData = [];
 
   const check = sessionStorage.getItem("cartData");
@@ -96,20 +100,21 @@ function addItem(item) {
     const dataToSubmit = JSON.stringify(cartData);
 
     sessionStorage.setItem("cartData", dataToSubmit);
+    domCheckout.classList.add("active");
   } else {
     cartData = sessionStorage.getItem("cartData");
 
     const data = JSON.parse(cartData);
+    const newData = [item, ...data];
+    // data.push(item);
 
-    data.push(item);
-
-    const dataToSubmit = JSON.stringify(data);
+    const dataToSubmit = JSON.stringify(newData);
 
     sessionStorage.setItem("cartData", dataToSubmit);
 
     const checks = JSON.parse(sessionStorage.getItem("cartData"));
 
-    console.log(checks.length);
+    domCheckout.classList.add("active");
   }
 }
 // handle add item

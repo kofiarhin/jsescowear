@@ -46,12 +46,29 @@
       margin-bottom: 0.8rem;
     }
 
-    .button-wrapper button {
+    .button-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    .button-wrapper button,
+    .button-wrapper a {
       display: block;
-      padding: 1rem 5rem;
       background-color: black;
       color: white;
       font-size: 1rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .button-wrapper a {
+      background-color: rgb(44, 102, 44);
+      display: none;
+    }
+
+    .button-wrapper a.active {
+      display: block;
     }
   }
 }
@@ -63,6 +80,20 @@
 
     .image-wrapper {
       margin-bottom: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .content-wrapper {
+    .text-wrapper .button-wrapper {
+      display: block;
+    }
+
+    .text-wrapper .button-wrapper button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.8rem;
     }
   }
 }

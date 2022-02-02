@@ -6,6 +6,7 @@
 
 body {
   overflow-x: hidden;
+  padding-bottom: 10rem;
 }
 
 a {
@@ -29,4 +30,11 @@ button {
   text-align: center;
   font-size: 3rem;
   font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 2.5rem;
+  }
 }
