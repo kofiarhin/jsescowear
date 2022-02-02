@@ -26,16 +26,17 @@ const handleThumb = () => {
   });
 };
 // render item
-function renderItem(item, category) {
+function renderItem(item) {
+  const { category, name, price, sizes } = item;
   // render text details
-  const name = document.querySelector(".name");
-  const price = document.querySelector(".price span");
+  const domName = document.querySelector(".name");
+  const domPrice = document.querySelector(".price span");
 
-  price.textContent = item.price.toFixed(2);
-  name.textContent = item.name;
+  domPrice.textContent = price.toFixed(2);
+  domName.textContent = name;
   // render main thumb
   const thumb = document.querySelector(".main-thumb img");
-  const thumbUrl = `/images/${category}/${item.name}/1.jpg`;
+  const thumbUrl = `/images/${category}/${name}/1.jpg`;
   thumb.src = thumbUrl;
 
   // render thumb nails
@@ -44,7 +45,7 @@ function renderItem(item, category) {
 
   // build thumb wrapper markup
   for (let i = 1; i < 4; i++) {
-    const url = `/images/${category}/${item.name}/${i}.jpg`;
+    const url = `/images/${category}/${name}/${i}.jpg`;
     const img = `<img src="${url}" />`;
     thumbWrapperMarkup += `<div class="thumb-unit"> ${img}</div>`;
   }
@@ -57,7 +58,7 @@ function renderItem(item, category) {
 
   // render sizes
 
-  const { sizes } = item;
+  // const { sizes } = item;
 
   const selectWrapper = document.querySelector(".select-wrapper");
 
@@ -76,10 +77,10 @@ function renderItem(item, category) {
   selectWrapper.innerHTML = selectMarkup;
 }
 
-async function renderDetails(item, category) {
-  console.log("Render details");
+async function renderDetails(item) {
+  // render details
   renderTitle(item);
-  renderItem(item, category);
+  renderItem(item);
 }
 
 // add item
@@ -135,7 +136,10 @@ async function init() {
 
   const item = await getItem(category, name);
 
-  renderDetails(item, category);
+  //format item details by adding category
+  const formattedItem = { ...item, category };
+
+  renderDetails(formattedItem);
 
   // handle add item
   handleAddItem(item);
