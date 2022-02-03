@@ -24,14 +24,14 @@ const renderCart = (data) => {
 
   data.forEach((item, index) => {
     const { name, price, category } = item;
-    let markup = `<div class="cart-unit" id="item-${index}">
+    let markup = `<a href="item.html?category=${category}&&name=${name}" class="cart-unit" id="item-${index}">
                     <img src="../images/${category}/${name}/1.jpg" alt="">
                     <div class="text-wrapper">
                         <p class="name">${name}</p>
                         <p class="price">£${price.toFixed(2)}</p>
                         <i class="fa fa-window-close remove"></i>
                     </div>
-                </div>`;
+                </a>`;
 
     domMarkup += markup;
   });
