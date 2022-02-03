@@ -6,12 +6,17 @@
 
 body {
   overflow-x: hidden;
-  padding-bottom: 10rem;
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -101,6 +106,10 @@ button {
     display: block;
   }
 }
+#store {
+  min-height: 90vh;
+  padding-bottom: 2rem;
+}
 #store .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -135,6 +144,11 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+#item {
+  min-height: 70vh;
+  padding-bottom: 2rem;
+}
+
 .content-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -251,6 +265,10 @@ button {
     font-size: 1rem;
   }
 }
+#cart {
+  min-height: 70vh;
+  padding-bottom: 2rem;
+}
 #cart .container {
   width: 540px;
   max-width: 90%;
@@ -292,4 +310,58 @@ button {
 }
 #cart .cart-unit img {
   width: 100%;
+}
+
+#footer {
+  background-color: black;
+  color: white;
+  padding: 2rem 0rem;
+}
+#footer .socials {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#footer .socials i {
+  margin-right: 1rem;
+  color: white;
+}
+#footer .text-wrapper {
+  text-align: center;
+  font-size: 1.2rem;
+}
+#footer .text-wrapper .slug {
+  margin-bottom: 1rem;
+}
+#footer .footer-wrapper {
+  padding: 2rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+#footer .footer-wrapper .footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+#footer .footer-wrapper ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  #footer .socials {
+    text-align: left;
+  }
+
+  #footer .text-wrapper {
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  #footer .footer-wrapper {
+    display: block;
+  }
+  #footer .footer-wrapper .footer-unit {
+    margin-bottom: 1rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
