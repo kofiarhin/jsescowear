@@ -1,3 +1,3 @@
 # A simple E-commerce using plain vanilla javascript
 
-# [Live Demo](https://61fbc509622f1b92c5ff8de1--vigorous-babbage-001f02.netlify.app)
+# [Live Demo](https://61fbd5ea36141bacb4d98649--vigorous-babbage-001f02.netlify.app)
