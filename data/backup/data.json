@@ -97,69 +97,13 @@
             }
             
         ],
-        "shoes": [
+        "jeans": [
 
              {
-                "name": "ADIDAS YEEZY 700 V3 'CLAY BROWN'",
-                "color": "black",
-                "price": 200,
-                "sizes": ["34", "35", "40", "45"]
-            },
-
-             {
-                "name": "ADIDAS YEEZY BOOST 700 ‘SUN'",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
-            },
-
-             {
-                "name": "AIR JORDAN 1 MID PS BANNED",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
-            },
-
-            {
-                "name": "AIR JORDAN 1 MID PS HYPER ROYAL",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
-            },
-
-            {
-                "name": "AIR JORDAN 4 WMNS RETRO 'STARFISH'",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
-            },
-
-
-            {
-                "name": "DQM X NIKE AIR MAX 90 'BACON' 2021",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
-            },
-
-            {
-                "name": "FRAGMENT DESIGN X AIR JORDAN 3 RETRO SP 'WHITE'",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
-            },
-
-            {
-                "name": "NIKE DUNK HIGH SP 'MICHIGAN' 2020",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
-            },
-            {
-                "name": "SUPREME X NIKE AIR FORCE 1 LOW 'BOX LOGO - BLACK'",
-                "color": "black",
-                "price": 400,
-                "sizes": ["34", "35", "40", "45"]
+                "name": "SLIM FIT GRANDAD COLLAR SHORT SLEEVE SHIRT",
+                "color": "navy",
+                "price": 20,
+                "sizes": ["s", "m", "l", "xl"]
             }
             
         ]
