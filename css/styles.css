@@ -257,12 +257,44 @@ button {
   cursor: pointer;
 }
 
+#trending .trend-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 2rem 0rem;
+}
+#trending .trend-wrapper .trend-unit {
+  min-height: 500px;
+  display: block;
+  background-color: blue;
+  background-image: url("../images/shirts/thumb.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+#trending .trend-wrapper .trend-unit:nth-child(1) {
+  background-image: url("../images/shoes/thumb.jpg");
+}
+#trending .trend-wrapper .trend-unit:nth-child(2) {
+  background-image: url("../images/hoodies/thumb.jpg");
+}
+#trending .trend-wrapper .trend-unit:nth-child(3) {
+  background-image: url("../images/shirts/thumb.jpg");
+}
+
 @media (max-width: 800px) {
   #banner {
     background-image: Url("../images/banner-small.jpg");
   }
   #banner .overlay a {
     font-size: 1rem;
+  }
+
+  #trending .trend-wrapper {
+    display: block;
+  }
+  #trending .trend-wrapper .trend-unit {
+    min-height: 300px;
+    margin-bottom: 1rem;
   }
 }
 #cart {
