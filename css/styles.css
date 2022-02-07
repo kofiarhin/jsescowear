@@ -322,7 +322,8 @@ button {
   grid-gap: 20px;
 }
 #brands .brand-wrapper .brand-unit {
-  background-color: black;
+  background-size: cover;
+  background-position: center;
 }
 #brands .brand-wrapper .brand-unit:nth-child(1) {
   background-image: url("../images/logo/drmartens.jpg");

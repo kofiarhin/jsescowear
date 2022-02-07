@@ -64,7 +64,8 @@
     grid-auto-rows: 200px;
     grid-gap: 20px;
     .brand-unit {
-      background-color: black;
+      background-size: cover;
+      background-position: center;
       &:nth-child(1) {
         background-image: url("../images/logo/drmartens.jpg");
       }
