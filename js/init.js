@@ -24,7 +24,16 @@ async function handleNavLinks() {
     .then((response) => response.json())
     .then((result) => Object.keys(result));
 
-  let linksMarkup = "";
+  let linksMarkup = `
+ <div class="form-wrapper">  
+ 
+  <form action="">
+                    <div class="search">
+                        <input type="text" placeholder="search product">
+                    </div>
+                </form>
+ </div>
+  `;
 
   categories.forEach((item) => {
     linksMarkup += `<a href="store.html?category=${item}"> ${item}</a>`;
@@ -36,10 +45,20 @@ async function handleNavLinks() {
 
   domLinks.innerHTML = linksMarkup;
 }
+// handle search
+function handleSearch() {
+  const domNav = document.querySelector("#navigation");
 
+  domNav.addEventListener("click", function (e) {
+    if (e.target.parentNode.classList.contains("search")) {
+    }
+  });
+}
 async function init() {
   handleNavigation();
   handleNavLinks();
+
+  handleSearch();
 }
 
 init();

@@ -6,6 +6,35 @@
     justify-content: space-between;
   }
 
+  .form-wrapper {
+    flex: 1;
+  }
+
+  input {
+    border: 1px solid black;
+    width: 100%;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  .search {
+    flex: 1;
+    margin: 0rem 1rem;
+    input {
+      width: 100%;
+      padding: 0.5rem 0rem;
+      font-size: 1.2rem;
+      text-indent: 20px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      outline: none;
+    }
+  }
+
   a h1 {
     font-size: 2.2rem;
   }
@@ -37,18 +66,22 @@
     .links.active {
       transform: translateX(0%);
     }
+
+    .form-wrapper {
+      flex: 0;
+      margin-bottom: 1rem;
+    }
     .links {
-      position: absolute;
+      position: fixed;
       z-index: 9000;
       background-color: rgba(black, 0.8);
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       transform: translateX(100%);
       transition: all ease-in-out 300ms;
       a {

@@ -27,12 +27,11 @@
 }
 
 #trending {
+  padding: 2rem 0rem;
   .trend-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    padding: 2rem 0rem;
-
     .trend-unit {
       min-height: 500px;
       display: block;
