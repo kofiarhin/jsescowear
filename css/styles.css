@@ -311,7 +311,37 @@ button {
   background-image: url("../images/shirts/thumb.jpg");
 }
 
+#brands {
+  min-height: 400px;
+  padding: 2rem 0rem;
+}
+#brands .brand-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  grid-gap: 20px;
+}
+#brands .brand-wrapper .brand-unit {
+  background-color: black;
+}
+#brands .brand-wrapper .brand-unit:nth-child(1) {
+  background-image: url("../images/logo/drmartens.jpg");
+}
+#brands .brand-wrapper .brand-unit:nth-child(2) {
+  background-image: url("../images/logo/ellese.jpg");
+}
+#brands .brand-wrapper .brand-unit:nth-child(3) {
+  background-image: url("../images/logo/nike.jpg");
+}
+#brands .brand-wrapper .brand-unit:nth-child(4) {
+  background-image: url("../images/logo/northface.jpg");
+}
+
 @media (max-width: 800px) {
+  #brands .brand-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   #banner {
     background-image: Url("../images/banner-small.jpg");
   }
