@@ -1,3 +1,4 @@
+// render items
 function renderItems(data) {
   const domContainer = document.querySelector("#store .container");
   const title = document.querySelector("#store .title");
@@ -22,17 +23,36 @@ function renderItems(data) {
   domContainer.innerHTML = markup;
 }
 
-async function init() {
-  // check for category
-
+async function handleCategorySearch() {
   const search = new URLSearchParams(window.location.search);
 
   const category = search.get("category");
 
-  let data = category ? await getStoreData(category) : await getStoreData();
+  const data = category ? await getStoreData(category) : await getStoreData();
 
   if (data && data.length > 0) {
     renderItems(data);
+  }
+}
+async function init() {
+  // check for category
+
+  // check if there is any search result
+  const searchData = sessionStorage.getItem("searchData");
+
+  if (searchData) {
+    const data = JSON.parse(searchData);
+    const search = sessionStorage.getItem("search");
+
+    console.log(search);
+
+    renderSearchResult(search, data);
+
+    // clear session
+    sessionStorage.removeItem("searchData");
+    sessionStorage.removeItem("search");
+  } else {
+    handleCategorySearch();
   }
 }
 

@@ -45,15 +45,83 @@ async function handleNavLinks() {
 
   domLinks.innerHTML = linksMarkup;
 }
+
+async function getAllStoreData() {
+  const data = await fetch("../data/data.json").then((response) =>
+    response.json()
+  );
+
+  const categories = Object.keys(data);
+
+  let dataToReturn = [];
+  const formattedData = categories.forEach((cat) => {
+    data[cat].forEach((item) => dataToReturn.push({ ...item, category: cat }));
+  });
+
+  return dataToReturn;
+}
+
+// render details --- refactor later
+function renderDetails(data) {
+  const domContainer = document.querySelector("#store .container");
+  const title = document.querySelector("#store .title");
+
+  let markup = "";
+
+  data.forEach((item) => {
+    const { name, price, category } = item;
+    markup += `
+      <a class="thumb-unit" href="item.html?category=${category}&&name=${name}">
+                <img src="../images/${category}/${name}/1.jpg" alt="">
+                <div class="text-wrapper">
+                    <p class="name">${name}</p>
+                    <p class="price">£${price.toFixed(2)}</p>
+                </div>
+            </a>
+     
+     `;
+  });
+
+  domContainer.innerHTML = markup;
+}
+// render Search result
+function renderSearchResult(search, data) {
+  const title = document.querySelector("#store .title");
+
+  title.textContent = `Search result for: ${search}`;
+
+  // render details
+
+  renderDetails(data);
+}
 // handle search
 function handleSearch() {
-  const domNav = document.querySelector("#navigation");
+  document.addEventListener("keypress", async (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      // get input value from input field
+      // perform search
+      const search = document.querySelector("#navigation input").value;
 
-  domNav.addEventListener("click", function (e) {
-    if (e.target.parentNode.classList.contains("search")) {
+      // get store data
+      const allStoreData = await getAllStoreData();
+
+      const searchResult = allStoreData.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
+
+      if (window.location.pathname !== "/store.html") {
+        sessionStorage.setItem("searchData", JSON.stringify(searchResult));
+        sessionStorage.setItem("search", JSON.stringify(search));
+        window.location.href = "store.html";
+      } else {
+        renderSearchResult(search, searchResult);
+      }
     }
   });
 }
+
+// initialize function
 async function init() {
   handleNavigation();
   handleNavLinks();
